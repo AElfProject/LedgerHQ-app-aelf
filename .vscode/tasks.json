@@ -104,6 +104,28 @@
             "problemMatcher": []
         },
         {
+            "label": "Copy from bin to test folder",
+            "type": "shell",
+            // Copy and rename the file in tests/elfs/ folder.
+            "command": "cp bin/app.elf tests/elfs/aelf_${input:model}.elf",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "Generate snapshots",
+            "type": "shell",
+            // Generate golden snapshots
+            "command": "docker exec -it ${config:container_name} bash -c 'pytest tests/python/ --tb=short --golden_run -v --device ${input:model}'",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": []
+        },
+        {
             "label": "Run functional tests (with display)",
             "type": "shell",
             // Runs functional tests inside the docker container (with Qt display enabled).

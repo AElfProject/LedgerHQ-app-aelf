@@ -41,6 +41,8 @@ Open the vscode tasks with  `ctrl + shift + b` (`command + shift + b` on a Mac) 
 ### First install the deps
 * Open the vscode tasks with  `ctrl + shift + b` (`command + shift + b` on a Mac) and run the following actions :
     * First install the requirements with `Install tests requirements`.
+    * After building, use `Copy from bin to test folder`.
+    * To generate golden snapshots for first run, use `Generate snapshots`.
     * Run the tests with `Run functional tests`.
 ## Unit
 Run C tests:
